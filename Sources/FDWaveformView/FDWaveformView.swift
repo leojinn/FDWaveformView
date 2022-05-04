@@ -100,7 +100,7 @@ open class FDWaveformView: UIView {
     }
 
     /// The color of the waveform
-    @IBInspectable open var wavesColor = UIColor.black {
+    @IBInspectable open var wavesColor = UIColor.white {
         didSet {
             imageView.tintColor = wavesColor
         }
@@ -417,7 +417,7 @@ open class FDWaveformView: UIView {
         let widthInPixels = floor(frame.width * CGFloat(horizontalOverdrawTarget))
         let heightInPixels = frame.height * CGFloat(horizontalOverdrawTarget)
         let imageSize = CGSize(width: widthInPixels, height: heightInPixels)
-        let renderFormat = FDWaveformRenderFormat(type: waveformRenderType, wavesColor: .black, scale: desiredImageScale)
+        let renderFormat = FDWaveformRenderFormat(type: waveformRenderType, wavesColor: .white, scale: desiredImageScale)
 
         let waveformRenderOperation = FDWaveformRenderOperation(audioContext: audioContext, imageSize: imageSize, sampleRange: renderSamples, format: renderFormat) { [weak self] image in
             DispatchQueue.main.async {
